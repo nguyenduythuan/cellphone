@@ -1,0 +1,131 @@
+/******* header *******/
+header {
+  height: 55px;
+  background-color: #eee;
+}
+
+.Menu {
+  height: 55px;
+  display: flex;
+}
+
+.Menu-branch {
+  display: flex;
+  background-color: #e11b1e;
+  max-height: 100%;
+  align-items: center;
+  padding-right: 10px;
+  flex-grow: 1;
+}
+
+.Menu-branch__logo {
+  width: 55px;
+}
+
+.Menu-branch__logo img {
+  object-fit: cover;
+}
+
+.Menu-branch-search {
+  align-items: center;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.Menu-branch-search-loaction {
+  align-items: center;
+  display: flex;
+  background-color: #ccc;
+  height: 100%;
+  width: 100px;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.Menu-branch-search-input {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.Menu-branch-search-input input {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.Menu-branch-search-btn {
+  align-items: center;
+  display: flex;
+  justify-items: center;
+  width: 25px;
+  height: 100%;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.Menu-list {
+  display: flex;
+}
+
+.Menu-list-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.Menu-list-item-content {
+  height: 100%;
+  padding: 0 3px;
+}
+
+.Menu-list-item-content:hover {
+  background-color: #e11b1e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Menu-list-item-content__txt {
+  font-size: 12px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.Menu-list-item-sub {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.Menu-list-item-sub-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+}
+
+.Menu-list-item-sub-list-item {
+  width: 50%;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.Menu-list-item-sub-list-item__txt {
+  white-space: nowrap;
+}
+
+.Menu-list-item-sub-list-item__txt:hover {
+  color: #e11b1e;
+  text-decoration: underline;
+}
+
+.Menu-list-item:hover .Menu-list-item-sub {
+  display: block; 
+}
