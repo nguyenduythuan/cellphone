@@ -66,3 +66,7 @@ textarea {
     display: block !important;
   }
 }
+
+.Noscroll {
+  overflow: hidden;
+}
