@@ -59,10 +59,10 @@ textarea {
 
 @media screen and (max-width: 1024px) {
   .only-pc {
-    display: none;
+    display: none !important;
   }
 
   .only-sp {
-    display: block;
+    display: block !important;
   }
 }

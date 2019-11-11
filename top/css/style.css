@@ -40,11 +40,60 @@ header {
 .Menu-branch-search-loaction {
   align-items: center;
   display: flex;
-  background-color: #ccc;
+  background-color: rgb(231, 228, 228);
   height: 100%;
   width: 100px;
   justify-content: center;
   font-size: 13px;
+  cursor: pointer;
+}
+
+.Menu-branch-search-loaction:hover {
+  background-color: #ccc;
+}
+
+.Menu-branch-search-loaction__txt {
+  position: relative;
+  margin-right: 5px;
+}
+
+.Menu-branch-search-loaction__txt::after {
+  content: "";
+  border-style: solid;
+  border-width: 5px 5px 5px 5px;
+  border-color: #666 transparent transparent transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 6px;
+}
+
+.Menu-branch-search-loaction-select {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  top: 50px;
+  width: 110px;
+  overflow: hidden;
+  display: none;
+}
+
+.Menu-branch-search-loaction--active .Menu-branch-search-loaction-select {
+  display: block;
+}
+
+.Menu-branch-search-loaction-select p {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.Menu-branch-search-loaction-select p:hover {
+  background-color: rgb(231, 228, 228);
+}
+
+.Menu-branch-search-loaction-select i {
+  padding-right: 2px;
 }
 
 .Menu-branch-search-input {
@@ -127,5 +176,61 @@ header {
 }
 
 .Menu-list-item:hover .Menu-list-item-sub {
-  display: block; 
+  display: block;
+}
+
+/***************** Nav SP **********************/
+
+.Nav {
+  background-color: #3c3d41;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.Nav__logo {
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+}
+
+.Nav-search {
+  flex-grow: 1;
+  padding: 7px;
+}
+
+.Nav-search-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.Nav-search__input {
+  /* width: 125px; */
+  height: 100%;
+  flex-grow: 1;
+}
+
+.Nav-search__input input {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.Nav-search__btn {
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #e03a2c;
+  color: #fff;
+}
+
+.Nav-hamburger {
+  width: 50px;
+  height: 50px;
 }
