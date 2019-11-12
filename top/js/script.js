@@ -29,5 +29,48 @@
       let mHeight = mWidth / 2.665;
       $(".js-carouselCtx").height(mHeight); // set chieu cao
     });
+
+    var carouselNavItem = 1;
+    var itemLength = $('.js-carouselList .Carousel-content-item').length; //tim trong cha cac phan tu con
+    var isScrolling = false;
+
+    $('.js-carouselNavItem').click(function() {
+      if($(this).hasClass('Carousel-nav-item--active')){
+        return;
+      }
+      let index = $(this).attr('data-index');
+      carouselNavItem = index;
+      scrollCarousel(carouselNavItem);
+    });
+
+    $('.js-carouselBtn').click(function() {
+      if($(this).hasClass('Carousel-content__btn--right')){
+        //Event for right
+        carouselNavItem++;
+      }else {
+        carouselNavItem--;
+      }
+      if (carouselNavItem > itemLength) {
+        carouselNavItem = 1;
+      } else if(carouselNavItem < 1) {
+        carouselNavItem = itemLength;
+      }
+      scrollCarousel(carouselNavItem);
+    });
+
+    function scrollCarousel(index) {
+      if (isScrolling) {
+        return;
+      }
+      isScrolling = true;
+      let carouselItem = $('#carousel' + index);
+      $('.Carousel-nav-item--active').removeClass('Carousel-nav-item--active');
+      $('.js-carouselNavItem[data-index='+index+']').addClass('Carousel-nav-item--active');
+      $('.js-carouselList').animate({
+        'left': 0-carouselItem.position().left
+      }, 300, function(){
+        isScrolling = false;
+      });
+    }
   });
 })(jQuery);
