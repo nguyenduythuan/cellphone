@@ -355,6 +355,7 @@ header {
   align-items: center;
   justify-content: center;
   border-left: 1px solid #ddd;
+  padding: 0 5px;
 }
 
 .Nav-menu-content-footer-location select {
@@ -376,5 +377,81 @@ header {
     width: 48%;
     text-align: center;
     font-size: 14px;
+  }
+  .Nav-menu-content-footer-contact a {
+    font-size: 16px;
+  }
+  .Nav-menu-content-footer-location {
+    font-size: 14px;
+  }
+}
+
+/***************** Banner **********************/
+
+.Banner {
+  display: flex;
+  margin-top: 8px;
+}
+
+.Carousel {
+  flex: 0 0 68%;
+}
+
+.Carousel-content {
+  background: #e41e21;
+}
+
+.Carousel-nav {
+  display: flex;
+  min-height: 50px;
+  border: 1px solid #ddd;
+}
+
+.Carousel-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-right: 1px solid #ddd;
+}
+
+.Carousel-nav-item:last-child {
+  border-right: none;
+}
+
+.Banner-content {
+  flex-grow: 1;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Banner-content__item {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Banner-content__item:last-child {
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  .Banner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Carousel {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .Banner-content {
+    display: flex;
+    flex-direction: row;
   }
 }
