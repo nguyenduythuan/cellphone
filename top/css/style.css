@@ -193,6 +193,7 @@ header {
   transition: all ease-in-out 0.3s;
   height: 50px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .Nav--active {
@@ -450,6 +451,7 @@ header {
   .Banner {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
   }
 
   .Carousel {
@@ -485,10 +487,17 @@ header {
   padding: 0 10px;
   font-size: 40px;
   transform: translateY(-50%);
+  color: #ddd;
+  /* background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 .Carousel-content__btn--right {
   right: 0;
+  /* background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
 }
 
 .Carousel-nav-item--active .Carousel-nav-item__txt {
@@ -507,3 +516,36 @@ header {
   background-color: #e11b1e;
 }
 
+@media screen and (max-width: 1024px) {
+  .Carousel-nav {
+    min-height: 30px;
+    margin: -40px auto 10px;
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    background-color: #3c3d41;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+
+  .Carousel-nav-item {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: #999;
+    margin-left: 5px;
+  }
+
+  .Carousel-nav-item:first-child {
+    margin-left: 0;
+  }
+
+  .Carousel-nav-item:hover,
+  .Carousel-nav-item--active,
+  .Carousel-nav-item--active:hover {
+    background-color: #fff;
+  }
+}
