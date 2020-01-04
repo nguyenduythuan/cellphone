@@ -46,7 +46,6 @@
     }
 
     function runCarouselGrabbing(a, b) {
-      clearTimeout(Carousel.run);
       if (a - b >= 100) {
         Carousel.isNeedToBack = false;
         Carousel.carouselNavItem--;
@@ -72,7 +71,6 @@
     }
 
     function carouselStop() {
-      clearTimeout(Carousel.run);
       window.removeEventListener("mousemove", carouselGrabbing);
       window.removeEventListener("mouseup", carouselStop);
       if(Carousel.isNeedToBack) {
@@ -87,6 +85,7 @@
           }
         );
       }
+      clearTimeout(Carousel.run);
       scrollCarousel(Carousel.carouselNavItem);
     }
 
