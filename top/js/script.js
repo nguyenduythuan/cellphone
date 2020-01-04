@@ -46,6 +46,7 @@
     }
 
     function runCarouselGrabbing(a, b) {
+      clearTimeout(Carousel.run);
       if (a - b >= 100) {
         Carousel.isNeedToBack = false;
         Carousel.carouselNavItem--;
@@ -176,8 +177,6 @@
       clearTimeout(Carousel.run);
       scrollCarousel(Carousel.carouselNavItem);
     });
-
-    console.log(window.history); 
 
   });
 })(jQuery);
