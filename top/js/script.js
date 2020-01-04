@@ -7,7 +7,8 @@
       currentX: 0,
       start: 0,
       carouselNavItem: 1,
-      isScrolling: false
+      isScrolling: false,
+      isNeedToBack: false,
     };
 
     $(window).on("load resize", function() {
@@ -45,11 +46,13 @@
     }
 
     function runCarouselGrabbing(a, b) {
-      if (a - b >= 50) {
+      if (a - b >= 100) {
+        Carousel.isNeedToBack = false;
         Carousel.carouselNavItem--;
         carouselStop();
         scrollCarousel(Carousel.carouselNavItem);
-      } else if (b - a >= 50) {
+      } else if (b - a >= 100) {
+        Carousel.isNeedToBack = false;
         Carousel.carouselNavItem++;
         carouselStop();
         scrollCarousel(Carousel.carouselNavItem);
@@ -57,6 +60,7 @@
     }
 
     function carouselGrabbing(e) {
+      Carousel.isNeedToBack = true;
       clearTimeout(Carousel.run);
       var distanceX = e.pageX - Carousel.currentX;
       Carousel.currentX = e.pageX;
@@ -69,6 +73,20 @@
     function carouselStop() {
       window.removeEventListener("mousemove", carouselGrabbing);
       window.removeEventListener("mouseup", carouselStop);
+      if(Carousel.isNeedToBack) {
+        let carouselItem = $("#carousel" + Carousel.carouselNavItem);
+        Carousel.list.animate(
+          {
+            left: 0 - carouselItem.position().left
+          },
+          300,
+          function() {
+            Carousel.isScrolling = false;
+          }
+        );
+      }
+      clearTimeout(Carousel.run);
+      scrollCarousel(Carousel.carouselNavItem);
     }
 
     function scrollCarousel(index) {
@@ -158,5 +176,8 @@
       clearTimeout(Carousel.run);
       scrollCarousel(Carousel.carouselNavItem);
     });
+
+    console.log(window.history); 
+
   });
 })(jQuery);
