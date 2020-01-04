@@ -71,6 +71,7 @@
     }
 
     function carouselStop() {
+      clearTimeout(Carousel.run);
       window.removeEventListener("mousemove", carouselGrabbing);
       window.removeEventListener("mouseup", carouselStop);
       if(Carousel.isNeedToBack) {
@@ -85,7 +86,6 @@
           }
         );
       }
-      clearTimeout(Carousel.run);
       scrollCarousel(Carousel.carouselNavItem);
     }
 
