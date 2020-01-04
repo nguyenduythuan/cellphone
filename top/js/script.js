@@ -46,12 +46,12 @@
     }
 
     function runCarouselGrabbing(a, b) {
-      if (a - b >= 100) {
+      if (a - b >= 150) {
         Carousel.isNeedToBack = false;
         Carousel.carouselNavItem--;
         carouselStop();
         scrollCarousel(Carousel.carouselNavItem);
-      } else if (b - a >= 100) {
+      } else if (b - a >= 150) {
         Carousel.isNeedToBack = false;
         Carousel.carouselNavItem++;
         carouselStop();
@@ -84,11 +84,10 @@
             Carousel.isScrolling = false;
           }
         );
+        clearTimeout(Carousel.run);
+        scrollCarousel(Carousel.carouselNavItem);
       }
-      clearTimeout(Carousel.run);
-      scrollCarousel(Carousel.carouselNavItem);
     }
-
     function scrollCarousel(index) {
       Carousel.isScrolling = true;
       let carouselItem = $("#carousel" + index);
@@ -176,8 +175,5 @@
       clearTimeout(Carousel.run);
       scrollCarousel(Carousel.carouselNavItem);
     });
-
-    console.log(window.history); 
-
   });
 })(jQuery);
