@@ -177,5 +177,7 @@
       scrollCarousel(Carousel.carouselNavItem);
     });
 
+    console.log(window.history); 
+
   });
 })(jQuery);
